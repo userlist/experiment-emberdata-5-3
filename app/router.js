@@ -1,5 +1,5 @@
 import EmberRouter from '@ember/routing/router';
-import config from 'experiment-ember-data-5-3/config/environment';
+import config from 'experiment-emberdata-5-3/config/environment';
 
 export default class Router extends EmberRouter {
   location = config.locationType;

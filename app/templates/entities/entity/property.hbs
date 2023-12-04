@@ -1,3 +1,9 @@
+{{#if @model.parent}}
+  <LinkTo @route="entities.entity.property" @model={{@model.parent.id}}>Back to Parent</LinkTo>
+{{else}}
+  <LinkTo @route="entities.entity" @model={{@model.entity.id}}>Back to Entity</LinkTo>
+{{/if}}
+
 <div>{{@model.name}}</div>
 
 <ul>
