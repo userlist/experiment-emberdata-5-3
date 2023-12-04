@@ -1,13 +1,13 @@
 {{#if @model.parent}}
-  <LinkTo @route="entities.entity.property" @model={{@model.parent.id}}>Back to Parent</LinkTo>
+  <LinkTo @route="entities.entity.property" @model={{@model.parent.id}} data-test-link-back>Back to Parent</LinkTo>
 {{else}}
-  <LinkTo @route="entities.entity" @model={{@model.entity.id}}>Back to Entity</LinkTo>
+  <LinkTo @route="entities.entity" @model={{@model.entity.id}} data-test-link-back>Back to Entity</LinkTo>
 {{/if}}
 
-<div>{{@model.name}}</div>
+<div data-test-property>{{@model.name}}</div>
 
 <ul>
   {{#each @model.properties as |property|}}
-    <LinkTo @route="entities.entity.property" @model={{property.id}}>{{property.name}}</LinkTo>
+    <LinkTo @route="entities.entity.property" @model={{property.id}} data-test-property="{{property.id}}">{{property.name}}</LinkTo>
   {{/each}}
 </ul>

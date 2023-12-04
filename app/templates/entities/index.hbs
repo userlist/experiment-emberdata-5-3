@@ -1,5 +1,5 @@
 <ul>
   {{#each @model as |entity|}}
-    <LinkTo @route="entities.entity" @model={{entity.id}}>{{entity.name}}</LinkTo>
+    <LinkTo @route="entities.entity" @model={{entity.id}} data-test-entity="{{entity.id}}">{{entity.name}}</LinkTo>
   {{/each}}
 </ul>

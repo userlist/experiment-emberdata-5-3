@@ -5,6 +5,11 @@ import { setApplication } from '@ember/test-helpers';
 import { setup } from 'qunit-dom';
 import { start } from 'ember-qunit';
 
+QUnit.config.urlConfig.push({
+  id: 'mirageLogging',
+  label: 'Mirage logging',
+});
+
 setApplication(Application.create(config.APP));
 
 setup(QUnit.assert);
