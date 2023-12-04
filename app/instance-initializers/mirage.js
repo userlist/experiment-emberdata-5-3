@@ -1,8 +1,7 @@
 import makeServer from '../mirage/config';
 
 function initialize(instance) {
-  let server = makeServer(instance);
-  server.loadFixtures();
+  makeServer(instance);
 }
 
 export default {

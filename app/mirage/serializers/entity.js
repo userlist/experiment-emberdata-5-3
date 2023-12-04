@@ -1,3 +1,3 @@
-import { Serializer } from 'miragejs';
+import ApplicationSerializer from './application';
 
-export default Serializer.extend();
+export default ApplicationSerializer.extend();

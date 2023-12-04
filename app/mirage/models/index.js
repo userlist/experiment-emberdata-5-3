@@ -1,4 +1,7 @@
-import Entity from './entity';
-import Property from './property';
+import entity from './entity';
+import property from './property';
 
-export default [Entity, Property];
+export default {
+  entity,
+  property,
+};
