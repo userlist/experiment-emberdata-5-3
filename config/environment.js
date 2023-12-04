@@ -2,7 +2,7 @@
 
 module.exports = function (environment) {
   const ENV = {
-    modulePrefix: 'experiment-ember-data-5-3',
+    modulePrefix: 'experiment-emberdata-5-3',
     environment,
     rootURL: '/',
     locationType: 'history',
