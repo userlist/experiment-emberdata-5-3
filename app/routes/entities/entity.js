@@ -5,8 +5,6 @@ export default class EntitiesEntityRoute extends Route {
   @service store;
 
   model({ entity_id }) {
-    return this.store.findRecord('entity', entity_id, {
-      include: 'properties',
-    });
+    return this.store.findRecord('entity', entity_id);
   }
 }
