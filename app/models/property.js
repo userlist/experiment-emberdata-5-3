@@ -18,11 +18,11 @@ export default class PropertyModel extends Model {
     return this.name.startsWith('properties.');
   }
 
-  get isPublicProperty() {
+  get isPublic() {
     return !this.entity.privatePropertyNames.includes(this.name);
   }
 
-  get isProtectedProperty() {
+  get isProtected() {
     return this.entity.protectedPropertyNames.includes(this.name);
   }
 }

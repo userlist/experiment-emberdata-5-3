@@ -5,6 +5,8 @@
 {{/if}}
 
 <div data-test-property>{{@model.name}}</div>
+<div data-test-is-public>{{@model.isPublic}}</div>
+<div data-test-is-protected>{{@model.isProtected}}</div>
 
 <ul>
   {{#each @model.properties as |property|}}
