@@ -4,12 +4,19 @@
   <LinkTo @route="entities.entity" @model={{@model.entity.id}} data-test-link-back>Back to Entity</LinkTo>
 {{/if}}
 
-<div data-test-property>{{@model.name}}</div>
+<div data-test-property>{{@model.id}}: {{@model.name}}</div>
 <div data-test-is-public>{{@model.isPublic}}</div>
 <div data-test-is-protected>{{@model.isProtected}}</div>
 
 <ul>
   {{#each @model.properties as |property|}}
-    <LinkTo @route="entities.entity.property" @model={{property.id}} data-test-property="{{property.id}}">{{property.name}}</LinkTo>
+    <li>
+      <LinkTo @route="entities.entity.property" @model={{property.id}} data-test-property="{{property.id}}">
+        {{property.id}}:
+        {{#each property.displayNames as |name index|}}
+          {{if index "> "}}{{name}}
+        {{/each}}
+      </LinkTo>
+    </li>
   {{/each}}
 </ul>

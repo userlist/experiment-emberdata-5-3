@@ -4,6 +4,12 @@
 
 <ul>
   {{#each @model.properties as |property|}}
-    <LinkTo @route="entities.entity.property" @model={{property.id}} data-test-property="{{property.id}}">{{property.name}}</LinkTo>
+    <li>
+      <LinkTo @route="entities.entity.property" @model={{property.id}} data-test-property="{{property.id}}">
+        {{#each property.displayNames as |name index|}}
+          {{if index "> "}}{{name}}
+        {{/each}}
+      </LinkTo>
+    </li>
   {{/each}}
 </ul>
