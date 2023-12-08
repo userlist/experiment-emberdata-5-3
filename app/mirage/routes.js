@@ -10,14 +10,19 @@ export default function () {
     let companies = schema.companies.all();
     let events = schema.events.all();
 
-    entities.models = [...users.models, ...companies.models, ...events.models];
+    entities.models = [
+      ...entities.models,
+      ...users.models,
+      ...companies.models,
+      ...events.models,
+    ];
 
     return entities;
   });
 
   this.get('/entities/:entity_id', (schema, request) => {
     let { entity_id } = request.params;
-    let entityTypes = ['users', 'companies', 'events'];
+    let entityTypes = ['entities', 'users', 'companies', 'events'];
 
     for (let entityType of entityTypes) {
       let entity = schema[entityType].find(entity_id);
