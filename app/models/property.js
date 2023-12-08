@@ -25,4 +25,19 @@ export default class PropertyModel extends Model {
   get isProtected() {
     return this.entity.protectedPropertyNames.includes(this.name);
   }
+
+  get displayName() {
+    let parts = this.name.split('.');
+    return parts[parts.length - 1];
+  }
+
+  get displayNames() {
+    let names = this.parent?.displayNames ?? [];
+
+    if (this.isPublic) {
+      names = [...names, this.displayName];
+    }
+
+    return names;
+  }
 }
