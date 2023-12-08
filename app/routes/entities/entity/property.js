@@ -9,7 +9,7 @@ export default class EntitiesEntityPropertyRoute extends Route {
 
     return this.store.findRecord('property', property_id, {
       reload: true,
-      preload: { entity_id },
+      preload: { entity: entity_id },
       include: 'entity,parent,properties',
     });
   }
