@@ -14,16 +14,8 @@ export default class PropertyModel extends Model {
   @belongsTo('property', { inverse: 'properties', async: false }) parent;
   @hasMany('property', { inverse: 'parent', async: false }) properties;
 
-  get isCustomProperty() {
-    return this.name.startsWith('properties.');
-  }
-
   get isPublic() {
     return !this.entity.privatePropertyNames.includes(this.name);
-  }
-
-  get isProtected() {
-    return this.entity.protectedPropertyNames.includes(this.name);
   }
 
   get displayName() {

@@ -9,8 +9,4 @@ export default class EntityModel extends Model {
   get privatePropertyNames() {
     return ['properties'];
   }
-
-  get protectedPropertyNames() {
-    return [...this.privatePropertyNames, 'created_at', 'updated_at'];
-  }
 }
